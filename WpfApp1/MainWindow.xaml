@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hanoi Tower Puzzle" Height="700" Width="900">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="SteelBlue" Padding="15">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество дисков:" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="DiskQuantityTextBox" Width="60" FontSize="14" Text="4" VerticalAlignment="Center"/>
+                <Button x:Name="StartButton" Content="Старт" Click="OnStartButtonClick" 
+                        Margin="20,0,0,0" Padding="15,8" Background="Gold" FontWeight="Bold"/>
+                <Button x:Name="ResetButton" Content="Переустановка" Click="OnResetButtonClick" 
+                        Margin="10,0,0,0" Padding="15,8" Background="LightGreen"/>
+            </StackPanel>
+        </Border>
+
+        <!-- игровое поле -->
+        <Canvas x:Name="GameCanvas" Grid.Row="1" Margin="20"/>
+
+        <!-- нижняя панель с счетчиком шагов -->
+        <Border Grid.Row="2" Background="DarkSlateGray" Padding="10">
+            <TextBlock x:Name="StepCounter" Text="Total Moves: 0" Foreground="White" FontSize="18" FontWeight="Bold"/>
+        </Border>
+    </Grid>
+</Window>
